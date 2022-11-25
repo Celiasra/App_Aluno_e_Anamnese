@@ -1,0 +1,251 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+<Lgn>:
+    orientation: 'vertical'
+    padding: 20
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: get_color_from_hex('#b9f4be')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            size_hint: .4, .4
+            pos_hint: {"center_x": .5, "center_y": .75}
+            source: 'logo.png'
+        Label:
+            text: 'Informe seu Usuário e Senha'
+            size_hint: .5, .1
+            pos_hint: {"center_x": .5, "center_y": .55}
+            color: get_color_from_hex('#0000FF')
+        GridLayout:
+            cols: 1
+            spacing: 5
+            size_hint: .7, .37
+            pos_hint: {"center_x": .5, "center_y": .3}
+
+            Label:
+                text: "Usuário"
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            TextInput:
+                id: usuario
+                multiline: False
+            Label:
+                text: "Senha"
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            TextInput:
+                id: senha
+                multiline: False
+                password: True
+            Label:
+                id: msg
+                text: ''
+                color: get_color_from_hex('#FF0000')
+            Button:
+                size_hint: 1., 1.
+                text: "ENTRAR"
+                on_release: root.logar()
+
+
+<Home>:
+    orientation: 'vertical'
+    padding: 20
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: get_color_from_hex('#b9f4be')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            size_hint: .7, .7
+            pos_hint: {"center_x": .5, "center_y": .75}
+            source: 'logo.png'
+        Label:
+            text: 'Informe a opção desejada'
+            size_hint: .5, .1
+            pos_hint: {"center_x": .5, "center_y": .55}
+            color: get_color_from_hex('#0000FF')
+        GridLayout:
+            cols: 1
+            spacing: 5
+            size_hint: .7, .37
+            pos_hint: {"center_x": .5, "center_y": .3}
+            Label:
+                text: ""
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Label:
+                text: ""
+            Button:
+                size_hint: 1., 1.
+                text: "CONSULTAR ALUNO"
+                on_release: root.consultar_aluno()
+            Label:
+            Button:
+                size_hint: 1., 1.
+                text: "CONSULTAR ANAMNESE"
+                on_release: root.consultar_anamnese()
+            Label:
+            Button:
+                size_hint: 1., 1.
+                text: "CADASTRAR ANAMNESE"
+                on_release: root.cadastrar_anamnese()
+
+
+<Consultar_Aluno>:
+    orientation: 'vertical'
+    padding: 20
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: get_color_from_hex('#b9f4be')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: 'Estamos na lista de Alunos'
+            size_hint: .5, .1
+            pos_hint: {"center_x": .5, "center_y": .55}
+            color: get_color_from_hex('#0000FF')
+        GridLayout:
+            cols: 1
+            spacing: 5
+            size_hint: .7, .37
+            pos_hint: {"center_x": .5, "center_y": .3}
+            Label:
+                text: ""
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Label:
+                text: ""
+            Label:
+                text: "Lista dos Alunos"
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Label:
+                text: ""
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Button:
+                size_hint: 1., 1.
+                text: "VOLTAR"
+                on_release: root.voltar()
+
+
+<Consultar_Anamnese>:
+    orientation: 'vertical'
+    padding: 20
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: get_color_from_hex('#b9f4be')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: 'Estamos na Tela de Consulta Anamnese'
+            size_hint: .5, .1
+            pos_hint: {"center_x": .5, "center_y": .55}
+            color: get_color_from_hex('#0000FF')
+        GridLayout:
+            cols: 1
+            spacing: 5
+            size_hint: .7, .37
+            pos_hint: {"center_x": .5, "center_y": .3}
+            Label:
+                text: ""
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Label:
+                text: ""
+            Label:
+                text: "Informações da Anamnese"
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Label:
+                text: ""
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Button:
+                size_hint: 1., 1.
+                text: "VOLTAR"
+                on_release: root.voltar()
+
+<Cadastrar_Anamnese>:
+    orientation: 'vertical'
+    padding: 20
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: get_color_from_hex('#b9f4be')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: 'Estamos na Tela de Cadastro de Anamnese'
+            size_hint: .5, .1
+            pos_hint: {"center_x": .5, "center_y": .55}
+            color: get_color_from_hex('#0000FF')
+        GridLayout:
+            cols: 1
+            spacing: 5
+            size_hint: .7, .37
+            pos_hint: {"center_x": .5, "center_y": .3}
+            Label:
+                text: ""
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Label:
+                text: ""
+            Label:
+                text: "Cadastro de Anamnese"
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Label:
+                text: ""
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            Button:
+                size_hint: 1., 1.
+                text: "VOLTAR"
+                on_release: root.voltar()
