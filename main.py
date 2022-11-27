@@ -1,10 +1,12 @@
+import kivy
+kivy.require("1.9.1")
+
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.core.window import Window
 from kivy.uix.scrollview import ScrollView
 
 
-#Window.clearcolor = (14/255,61/255,76/255,1)
 Window.size = (400,600)
 
 

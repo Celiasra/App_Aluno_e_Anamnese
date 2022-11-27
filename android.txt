@@ -1,0 +1,3 @@
+title= Cadastro de Alunos e Anamnese
+author= Grupo PI3 2022
+orientation= portrait ou landscape
