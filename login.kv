@@ -67,7 +67,7 @@
                 pos: self.pos
                 size: self.size
         Image:
-            size_hint: .7, .7
+            size_hint: .4, .4
             pos_hint: {"center_x": .5, "center_y": .75}
             source: 'logo.png'
         Label:
@@ -96,6 +96,11 @@
             Label:
             Button:
                 size_hint: 1., 1.
+                text: "CADASTRAR ALUNO"
+                on_release: root.cadastrar_aluno()
+            Label:
+            Button:
+                size_hint: 1., 1.
                 text: "CONSULTAR ANAMNESE"
                 on_release: root.consultar_anamnese()
             Label:
@@ -118,7 +123,7 @@
         Label:
             text: 'Estamos na lista de Alunos'
             size_hint: .5, .1
-            pos_hint: {"center_x": .5, "center_y": .55}
+            pos_hint: {"center_x": .5, "center_y": .9}
             color: get_color_from_hex('#0000FF')
         GridLayout:
             cols: 1
@@ -134,25 +139,69 @@
                 color: get_color_from_hex('#000000')
             Label:
                 text: ""
-            Label:
-                text: "Lista dos Alunos"
-                size_hint_x: .3
-                text_size: self.size
-                halign: 'left'
-                valign: 'middle'
-                color: get_color_from_hex('#000000')
-            Label:
-                text: ""
                 size_hint_x: .3
                 text_size: self.size
                 halign: 'left'
                 valign: 'middle'
                 color: get_color_from_hex('#000000')
             Button:
-                size_hint: 1., 1.
+                size_hint: 1., .5
                 text: "VOLTAR"
                 on_release: root.voltar()
 
+<Cadastrar_Aluno>:
+    orientation: 'vertical'
+    padding: 20
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: get_color_from_hex('#b9f4be')
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: 'Estamos na Tela de Cadastro de Aluno'
+            size_hint: .5, .1
+            pos_hint: {"center_x": .5, "center_y": .55}
+            color: get_color_from_hex('#0000FF')
+        GridLayout:
+            cols: 1
+            spacing: 5
+            size_hint: .7, .37
+            pos_hint: {"center_x": .5, "center_y": .3}
+            Label:
+                text: "Nome completo do Aluno"
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            TextInput:
+                id: aluno
+                multiline: False
+            Label:
+                text: "Idade"
+                size_hint_x: .3
+                text_size: self.size
+                halign: 'left'
+                valign: 'middle'
+                color: get_color_from_hex('#000000')
+            TextInput:
+                id: idade
+                multiline: False
+                password: True
+            Label:
+                id: msg
+                text: ''
+                color: get_color_from_hex('#FF0000')
+            Button:
+                size_hint: 1., 1.
+                text: "ADICIONAR"
+                on_release: root.addaluno()
+            Button:
+                size_hint: 1., 1.
+                text: "VOLTAR"
+                on_release: root.voltar()
 
 <Consultar_Anamnese>:
     orientation: 'vertical'
@@ -165,9 +214,9 @@
                 pos: self.pos
                 size: self.size
         Label:
-            text: 'Estamos na Tela de Consulta Anamnese'
+            text: 'Estamos na Consulta Anamnese'
             size_hint: .5, .1
-            pos_hint: {"center_x": .5, "center_y": .55}
+            pos_hint: {"center_x": .5, "center_y": .9}
             color: get_color_from_hex('#0000FF')
         GridLayout:
             cols: 1
@@ -183,24 +232,16 @@
                 color: get_color_from_hex('#000000')
             Label:
                 text: ""
-            Label:
-                text: "Informações da Anamnese"
-                size_hint_x: .3
-                text_size: self.size
-                halign: 'left'
-                valign: 'middle'
-                color: get_color_from_hex('#000000')
-            Label:
-                text: ""
                 size_hint_x: .3
                 text_size: self.size
                 halign: 'left'
                 valign: 'middle'
                 color: get_color_from_hex('#000000')
             Button:
-                size_hint: 1., 1.
+                size_hint: 1., .5
                 text: "VOLTAR"
                 on_release: root.voltar()
+
 
 <Cadastrar_Anamnese>:
     orientation: 'vertical'
@@ -223,28 +264,33 @@
             size_hint: .7, .37
             pos_hint: {"center_x": .5, "center_y": .3}
             Label:
-                text: ""
+                text: "Responsável pelo questionário"
                 size_hint_x: .3
                 text_size: self.size
                 halign: 'left'
                 valign: 'middle'
                 color: get_color_from_hex('#000000')
+            TextInput:
+                id: responsavel
+                multiline: False
             Label:
-                text: ""
-            Label:
-                text: "Cadastro de Anamnese"
+                text: "Grau de Parentesco do aluno"
                 size_hint_x: .3
                 text_size: self.size
                 halign: 'left'
                 valign: 'middle'
                 color: get_color_from_hex('#000000')
+            TextInput:
+                id: parentesco
+                multiline: False
             Label:
-                text: ""
-                size_hint_x: .3
-                text_size: self.size
-                halign: 'left'
-                valign: 'middle'
-                color: get_color_from_hex('#000000')
+                id: msg
+                text: ''
+                color: get_color_from_hex('#FF0000')
+            Button:
+                size_hint: 1., 1.
+                text: "ADICIONAR"
+                on_release: root.addanamnese()
             Button:
                 size_hint: 1., 1.
                 text: "VOLTAR"
